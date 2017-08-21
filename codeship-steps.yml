@@ -1,0 +1,17 @@
+- type: parallel
+  steps:
+  - name: eclipse-warnings
+    service: test
+    command: ant eclipse-warnings
+  - name: test
+    service: test
+    command: ant test -Dtest.runners=1
+  - name: long-test
+    service: test
+    command: ant long-test
+  - name: test-compression
+    service: test
+    command: ant test-compression
+  - name: stress-test
+    service: test
+    command: ant stress-test
